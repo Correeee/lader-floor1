@@ -1,0 +1,50 @@
+:root {
+    --color-grey: #BCBCBC;
+    --color-sky: #70ADD1;
+}
+
+section svg {
+    width: 60%;
+}
+
+#LaEstanciaArgentina:hover,
+#ElPrimo:hover,
+#Temakase:hover,
+#Holyshakes:hover,
+#TeaLeaf:hover,
+#Mitchs:hover,
+#TheWagyu:hover,
+#MiamiSwimmingAcademy:hover,
+#Crema:hover,
+#DrunkenDragon:hover,
+#Attar:hover,
+#Murano:hover,
+#Holi:hover,
+#Disponible:hover,
+#GelatoGo:hover,
+#Anderson:hover,
+#LaPiazzeta:hover,
+#Doggis:hover,
+#TheBluesBurgers:hover,
+#JuiceMafia:hover,
+#DrLimon:hover,
+#RepublicaCigarLounge:hover,
+#Sokai:hover {
+    transition: 0.5s ease;
+    fill: var(--color-sky);
+    cursor: pointer;
+}
+
+
+.logos {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    transition:  0.2s ease;
+}
+
+
+svg image {
+    width: 40px;
+    height: 40px;
+}
