@@ -3,6 +3,10 @@
     --color-sky: #70ADD1;
 }
 
+*:focus {
+    outline: none;
+}
+
 section svg {
     width: 60%;
 }
@@ -40,11 +44,30 @@ section svg {
     width: 60px;
     height: 60px;
     opacity: 0;
-    transition:  0.2s ease;
+    transition: 0.2s ease;
 }
 
 
 svg image {
     width: 40px;
     height: 40px;
+}
+
+.toastify {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: var(--color-sky);
+    border-radius: 10px;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.toastify button {
+    text-align: end;
+}
+
+.toastify-avatar {
+    width: 150px;
+    height: 150px;
 }
