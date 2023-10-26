@@ -9,8 +9,8 @@ for (let i = 0; i < selectorPolygons.length; i++) {
         for (let i = 0; i < logos.length; i++) {
             const logo = logos[i];
             const logoName = logo.id.split('-')[1]
-            if(polygon.id.includes(logoName)){
-                console.log(logo.style.opacity = 1)
+            if (polygon.id.includes(logoName)) {
+                logo.style.opacity = 1
             }
         }
     })
@@ -19,8 +19,8 @@ for (let i = 0; i < selectorPolygons.length; i++) {
         for (let i = 0; i < logos.length; i++) {
             const logo = logos[i];
             const logoName = logo.id.split('-')[1]
-            if(polygon.id.includes(logoName)){
-                console.log(logo.style.opacity = 0)
+            if (polygon.id.includes(logoName)) {
+                logo.style.opacity = 0
             }
         }
     })
