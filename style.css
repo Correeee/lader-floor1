@@ -56,6 +56,8 @@ svg image {
 .toastify {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color-sky);
     border-radius: 10px;
     padding: 1rem;
@@ -66,6 +68,7 @@ svg image {
 }
 
 .toastify button {
+    width: 100%;
     text-align: end;
 }
 
