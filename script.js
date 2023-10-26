@@ -5,6 +5,7 @@ const widthResponsive = 768
 
 const marcas = []
 
+
 for (let i = 0; i < selectorPolygons.length; i++) {
     const polygon = selectorPolygons[i];
 
@@ -40,8 +41,9 @@ for (let i = 0; i < selectorPolygons.length; i++) {
             }
         }
     })
+    
 
-    polygon.addEventListener(window.innerWidth < widthResponsive && 'click', (e) => {
+    polygon.addEventListener(window.innerWidth <= widthResponsive && 'focus', (e) => {
 
         const name = e.target.id
 
