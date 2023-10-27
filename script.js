@@ -30,7 +30,16 @@ for (let i = 0; i < selectorPolygons.length; i++) {
             const logoName = logo.id.split('-')[1]
             if (polygon.id.includes(logoName)) {
                 logo.style.opacity = 1
-                polygon.style.fill = 'var(--color-sky)'
+            }
+        }
+    })
+
+    polygon.addEventListener('click', () => {
+        for (let i = 0; i < logos.length; i++) {
+            const logo = logos[i];
+            const logoName = logo.id.split('-')[1]
+            if (polygon.id.includes(logoName)) {
+                logo.style.opacity = 1
             }
         }
     })
@@ -41,30 +50,36 @@ for (let i = 0; i < selectorPolygons.length; i++) {
             const logoName = logo.id.split('-')[1]
             if (polygon.id.includes(logoName)) {
                 logo.style.opacity = 0
-                polygon.style.fill = 'var(--color-grey)'
             }
         }
     })
 
 
-    polygon.addEventListener(window.innerWidth <= widthResponsive && 'focus', (e) => {
+    polygon.addEventListener('click', (e) => {
 
         const name = e.target.id
 
         const marca = marcas.find((marca, i) => marca.id == name)
         const logoContainer = document.getElementById('popUpLogo')
         logoContainer.src = marca.logo
+        popUp.classList.add(name)
         popUp.style.display = 'flex'
         backPopUp.style.display = 'flex'
-
+        const polygon = document.getElementById(name)
+        polygon.style.fill = 'var(--color-sky)'
     })
 
 }
 
 function closePopUp() {
+
+    const polygonId = popUp.className.split(' ')[1]
+    const polygon = document.getElementById(polygonId)
     if (popUp.style.display != 'none') {
         popUp.style.display = 'none'
         backPopUp.style.display = 'none'
+        polygon.style.fill = 'var(--color-grey)'
+        popUp.classList.remove(polygonId)
     }
 }
 
