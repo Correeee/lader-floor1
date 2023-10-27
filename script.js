@@ -5,6 +5,8 @@ const widthResponsive = 768
 
 const marcas = []
 
+const popUp = document.getElementsByClassName('popUp')[0]
+const backPopUp = document.getElementsByClassName('backPopUp')[0]
 
 for (let i = 0; i < selectorPolygons.length; i++) {
     const polygon = selectorPolygons[i];
@@ -28,6 +30,7 @@ for (let i = 0; i < selectorPolygons.length; i++) {
             const logoName = logo.id.split('-')[1]
             if (polygon.id.includes(logoName)) {
                 logo.style.opacity = 1
+                polygon.style.fill = 'var(--color-sky)'
             }
         }
     })
@@ -38,28 +41,30 @@ for (let i = 0; i < selectorPolygons.length; i++) {
             const logoName = logo.id.split('-')[1]
             if (polygon.id.includes(logoName)) {
                 logo.style.opacity = 0
+                polygon.style.fill = 'var(--color-grey)'
             }
         }
     })
-    
+
 
     polygon.addEventListener(window.innerWidth <= widthResponsive && 'focus', (e) => {
 
         const name = e.target.id
 
         const marca = marcas.find((marca, i) => marca.id == name)
-        // console.log(marca)
-        Toastify({
-            text: marca.id.split(/(?=[A-Z])/).join(' '),
-            avatar: marca.logo,
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            stopOnFocus: true,
-            onClick: function () { },
-        }).showToast();
+        const logoContainer = document.getElementById('popUpLogo')
+        logoContainer.src = marca.logo
+        popUp.style.display = 'flex'
+        backPopUp.style.display = 'flex'
+
     })
 
 }
 
+function closePopUp() {
+    if (popUp.style.display != 'none') {
+        popUp.style.display = 'none'
+        backPopUp.style.display = 'none'
+    }
+}
 
