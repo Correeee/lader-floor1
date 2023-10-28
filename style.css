@@ -61,7 +61,7 @@ svg image {
 .popUp {
     display: none;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     width: 200px;
     height: 200px;
